@@ -1,0 +1,11 @@
+package: github.com/nvcnvn/twirp_example
+import:
+- package: github.com/golang/protobuf
+  version: ~1.2.0
+  subpackages:
+  - jsonpb
+  - proto
+- package: github.com/twitchtv/twirp
+  version: ~5.4.2
+  subpackages:
+  - ctxsetters
