@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package twirp.example.supervisor;
+option go_package = "supervisor";
+
+// Supervisor service keep track of production from haberdasher.
+service Supervisor {
+  // Track acknowledges and returns total product already created
+  rpc Track(TrackRequest) returns (TrackRequest);
+}
+
+// TrackRequest store general data of a product from haberdasher
+message TrackRequest {
+  int32 total = 1;
+  enum ProductType {
+      HAT = 0;
+      VEST = 1;
+  }
+  ProductType type = 2;
+}
