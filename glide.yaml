@@ -9,3 +9,10 @@ import:
   version: ~5.4.2
   subpackages:
   - ctxsetters
+- package: go.opencensus.io
+  version: ~0.17.0
+  subpackages:
+  - examples/exporter
+  - stats/view
+  - trace
+  - zpages

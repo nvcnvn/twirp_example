@@ -1,0 +1,52 @@
+hash: 881edb886d66c0aa2562ddfc3a38f509d38ca988ba064b424e8faaedd927e91e
+updated: 2018-09-18T11:26:16.126834234+07:00
+imports:
+- name: github.com/golang/protobuf
+  version: aa810b61a9c79d51363740d207bb46cf8e620ed5
+  subpackages:
+  - jsonpb
+  - proto
+  - ptypes
+  - ptypes/any
+  - ptypes/duration
+  - ptypes/struct
+  - ptypes/timestamp
+- name: github.com/twitchtv/twirp
+  version: 8ad347ff7c94521ec5cc9e7a6c578d335fd676a5
+  subpackages:
+  - ctxsetters
+  - internal/contextkeys
+- name: go.opencensus.io
+  version: 79993219becaa7e29e3b60cb67f5b8e82dee11d6
+  subpackages:
+  - examples/exporter
+  - internal
+  - internal/tagencoding
+  - plugin/ocgrpc
+  - stats
+  - stats/internal
+  - stats/view
+  - tag
+  - trace
+  - trace/internal
+  - trace/propagation
+  - trace/tracestate
+  - zpages
+  - zpages/internal
+- name: golang.org/x/net
+  version: 92447d55896d6f92b4a0d4fd83bd078b0374e8fa
+  subpackages:
+  - context
+- name: google.golang.org/genproto
+  version: 4b56f30a1fd96a133a036b62cdd2a249883dd89b
+  subpackages:
+  - googleapis/rpc/status
+- name: google.golang.org/grpc
+  version: bd04c06895526e3d5a05d3a9d073f324edb491b6
+  subpackages:
+  - codes
+  - grpclog
+  - metadata
+  - stats
+  - status
+testImports: []

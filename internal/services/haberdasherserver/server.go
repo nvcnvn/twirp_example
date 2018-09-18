@@ -4,6 +4,7 @@ import (
 	"context"
 	"log"
 	"math/rand"
+	"time"
 
 	"github.com/nvcnvn/twirp_example/rpc/haberdasher"
 	"github.com/nvcnvn/twirp_example/rpc/supervisor"
@@ -17,8 +18,13 @@ type Server struct {
 
 // MakeHat implementation
 func (s *Server) MakeHat(ctx context.Context, size *haberdasher.Size) (hat *haberdasher.Hat, err error) {
+	time.Sleep(50 * time.Millisecond)
 	if size.Inches <= 0 {
 		return nil, twirp.InvalidArgumentError("inches", "I can't make a hat that small!")
+	}
+
+	if size.Inches == 13 {
+		return nil, twirp.InvalidArgumentError("inches", "Unlucky size for a nice hat!")
 	}
 
 	resp, err := s.SupervisorClient.Track(ctx, &supervisor.TrackRequest{
