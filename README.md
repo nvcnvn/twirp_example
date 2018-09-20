@@ -1,8 +1,10 @@
 ```sh
 go get github.com/nvcnvn/twirp_example
-go run $GOPATH/src/github.com/nvcnvn/twirp_example/cmd/http/main.go
+go run $GOPATH/src/github.com/nvcnvn/twirp_example/cmd/supervisorserver/main.go
+# in another terminal
+go run $GOPATH/src/github.com/nvcnvn/twirp_example/cmd/haberdasher/main.go
 ```
-This program will listen on port 9990.  
+This two programs will listen on port 9990 and 9991.  
 In another terminal:
 ```sh
 # make sure you have curl and protobuff tools
