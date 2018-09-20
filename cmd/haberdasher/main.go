@@ -13,16 +13,14 @@ import (
 
 	"github.com/nvcnvn/twirp_example/internal/hooks"
 	"github.com/nvcnvn/twirp_example/internal/services/haberdasherserver"
+	"github.com/nvcnvn/twirp_example/internal/services/supervisorserver"
 	"github.com/nvcnvn/twirp_example/rpc/haberdasher"
-	"github.com/nvcnvn/twirp_example/rpc/supervisor"
-	"go.opencensus.io/plugin/ochttp"
 )
 
 func main() {
-	supervisorClient := supervisor.NewSupervisorProtobufClient("http://localhost:9991", &http.Client{Transport: &ochttp.Transport{}})
-
+	supervisorServer := supervisorserver.NewServer()
 	haberdasherHandler := haberdasher.NewHaberdasherServer(&haberdasherserver.Server{
-		SupervisorClient: supervisorClient,
+		SupervisorClient: supervisorServer,
 	}, &twirp.ServerHooks{
 		RequestRouted: hooks.StartSpanWhenRequestRouted,
 		ResponseSent:  hooks.EndSpanWhenResponseSent,
